@@ -1,2 +1,4 @@
 *~
 *.swp
+.make
+_output
