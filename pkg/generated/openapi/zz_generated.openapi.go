@@ -1355,6 +1355,38 @@ func GetOpenAPIDefinitions(ref openapi.ReferenceCallback) map[string]openapi.Ope
 			Dependencies: []string{
 				"k8s.io/apimachinery/pkg/runtime.RawExtension"},
 		},
+		"k8s.io/metrics/pkg/apis/metrics/v1alpha1.ContainerMetrics": {
+			Schema: spec.Schema{
+				SchemaProps: spec.SchemaProps{
+					Description: "resource usage metrics of a container.",
+					Properties: map[string]spec.Schema{
+						"name": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Container name corresponding to the one from pod.spec.containers.",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"usage": {
+							SchemaProps: spec.SchemaProps{
+								Description: "The memory usage is the memory working set.",
+								Type:        []string{"object"},
+								AdditionalProperties: &spec.SchemaOrBool{
+									Schema: &spec.Schema{
+										SchemaProps: spec.SchemaProps{
+											Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+										},
+									},
+								},
+							},
+						},
+					},
+					Required: []string{"name", "usage"},
+				},
+			},
+			Dependencies: []string{
+				"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+		},
 		"k8s.io/metrics/pkg/apis/custom_metrics/v1alpha1.MetricValue": {
 			Schema: spec.Schema{
 				SchemaProps: spec.SchemaProps{
@@ -1456,6 +1488,206 @@ func GetOpenAPIDefinitions(ref openapi.ReferenceCallback) map[string]openapi.Ope
 			},
 			Dependencies: []string{
 				"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/custom_metrics/v1alpha1.MetricValue"},
+		},
+		"k8s.io/metrics/pkg/apis/metrics/v1alpha1.NodeMetrics": {
+			Schema: spec.Schema{
+				SchemaProps: spec.SchemaProps{
+					Description: "resource usage metrics of a node.",
+					Properties: map[string]spec.Schema{
+						"kind": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"apiVersion": {
+							SchemaProps: spec.SchemaProps{
+								Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"metadata": {
+							SchemaProps: spec.SchemaProps{
+								Ref: ref("k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"),
+							},
+						},
+						"timestamp": {
+							SchemaProps: spec.SchemaProps{
+								Description: "The following fields define time interval from which metrics were collected from the interval [Timestamp-Window, Timestamp].",
+								Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
+							},
+						},
+						"window": {
+							SchemaProps: spec.SchemaProps{
+								Ref: ref("k8s.io/apimachinery/pkg/apis/meta/v1.Duration"),
+							},
+						},
+						"usage": {
+							SchemaProps: spec.SchemaProps{
+								Description: "The memory usage is the memory working set.",
+								Type:        []string{"object"},
+								AdditionalProperties: &spec.SchemaOrBool{
+									Schema: &spec.Schema{
+										SchemaProps: spec.SchemaProps{
+											Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+										},
+									},
+								},
+							},
+						},
+					},
+					Required: []string{"timestamp", "window", "usage"},
+				},
+			},
+			Dependencies: []string{
+				"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+		},
+		"k8s.io/metrics/pkg/apis/metrics/v1alpha1.NodeMetricsList": {
+			Schema: spec.Schema{
+				SchemaProps: spec.SchemaProps{
+					Description: "NodeMetricsList is a list of NodeMetrics.",
+					Properties: map[string]spec.Schema{
+						"kind": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"apiVersion": {
+							SchemaProps: spec.SchemaProps{
+								Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"metadata": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds",
+								Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"),
+							},
+						},
+						"items": {
+							SchemaProps: spec.SchemaProps{
+								Description: "List of node metrics.",
+								Type:        []string{"array"},
+								Items: &spec.SchemaOrArray{
+									Schema: &spec.Schema{
+										SchemaProps: spec.SchemaProps{
+											Ref: ref("k8s.io/metrics/pkg/apis/metrics/v1alpha1.NodeMetrics"),
+										},
+									},
+								},
+							},
+						},
+					},
+					Required: []string{"items"},
+				},
+			},
+			Dependencies: []string{
+				"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/metrics/v1alpha1.NodeMetrics"},
+		},
+		"k8s.io/metrics/pkg/apis/metrics/v1alpha1.PodMetrics": {
+			Schema: spec.Schema{
+				SchemaProps: spec.SchemaProps{
+					Description: "resource usage metrics of a pod.",
+					Properties: map[string]spec.Schema{
+						"kind": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"apiVersion": {
+							SchemaProps: spec.SchemaProps{
+								Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"metadata": {
+							SchemaProps: spec.SchemaProps{
+								Ref: ref("k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"),
+							},
+						},
+						"timestamp": {
+							SchemaProps: spec.SchemaProps{
+								Description: "The following fields define time interval from which metrics were collected from the interval [Timestamp-Window, Timestamp].",
+								Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
+							},
+						},
+						"window": {
+							SchemaProps: spec.SchemaProps{
+								Ref: ref("k8s.io/apimachinery/pkg/apis/meta/v1.Duration"),
+							},
+						},
+						"containers": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Metrics for all containers are collected within the same time window.",
+								Type:        []string{"array"},
+								Items: &spec.SchemaOrArray{
+									Schema: &spec.Schema{
+										SchemaProps: spec.SchemaProps{
+											Ref: ref("k8s.io/metrics/pkg/apis/metrics/v1alpha1.ContainerMetrics"),
+										},
+									},
+								},
+							},
+						},
+					},
+					Required: []string{"timestamp", "window", "containers"},
+				},
+			},
+			Dependencies: []string{
+				"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time", "k8s.io/metrics/pkg/apis/metrics/v1alpha1.ContainerMetrics"},
+		},
+		"k8s.io/metrics/pkg/apis/metrics/v1alpha1.PodMetricsList": {
+			Schema: spec.Schema{
+				SchemaProps: spec.SchemaProps{
+					Description: "PodMetricsList is a list of PodMetrics.",
+					Properties: map[string]spec.Schema{
+						"kind": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"apiVersion": {
+							SchemaProps: spec.SchemaProps{
+								Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources",
+								Type:        []string{"string"},
+								Format:      "",
+							},
+						},
+						"metadata": {
+							SchemaProps: spec.SchemaProps{
+								Description: "Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds",
+								Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"),
+							},
+						},
+						"items": {
+							SchemaProps: spec.SchemaProps{
+								Description: "List of pod metrics.",
+								Type:        []string{"array"},
+								Items: &spec.SchemaOrArray{
+									Schema: &spec.Schema{
+										SchemaProps: spec.SchemaProps{
+											Ref: ref("k8s.io/metrics/pkg/apis/metrics/v1alpha1.PodMetrics"),
+										},
+									},
+								},
+							},
+						},
+					},
+					Required: []string{"items"},
+				},
+			},
+			Dependencies: []string{
+				"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/metrics/v1alpha1.PodMetrics"},
 		},
 		"k8s.io/apimachinery/pkg/version.Info": {
 			Schema: spec.Schema{
