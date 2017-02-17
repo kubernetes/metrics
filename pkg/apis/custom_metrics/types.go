@@ -53,3 +53,7 @@ type MetricValue struct {
 	// the value of the metric for this
 	Value resource.Quantity `json:"value"`
 }
+
+// allObjects is a wildcard used to select metrics
+// for all objects matching the given label selector
+const AllObjects = "*"
