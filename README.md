@@ -14,12 +14,9 @@ library when implementing their API servers.
 
 ## APIs
 
-This repository contains (or will contain) types and clients for the
-following APIs:
+This repository contains types and clients for the following APIs:
 
 ### Custom Metrics API
-
-**[Coming Soon]**
 
 This API allows consumers to access arbitrary metrics which describe
 Kubernetes resources.
@@ -28,6 +25,17 @@ The API is intended to be implemented by monitoring pipeline vendors, on
 top of their metrics storage solutions.
 
 Import Path: `k8s.io/metrics/pkg/apis/custom_metrics`.
+
+### Resource Metrics API
+
+This API allows consumers to access resource metrics (CPU and memory) for
+pods and nodes.
+
+The API is implemented by Heapster
+(https://github.com/kubernetes/heapster) and metrics-server
+(https://github.com/kubernetes-incubator/metrics-server).
+
+Import Path: `k8s.io/metrics/pkg/apis/metrics`.
 
 ## Compatibility
 
