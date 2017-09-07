@@ -9,17 +9,22 @@ go_library(
     name = "go_default_library",
     srcs = [
         "doc.go",
+        "generated.pb.go",
         "register.go",
         "types.go",
+        "zz_generated.conversion.go",
         "zz_generated.deepcopy.go",
     ],
     deps = [
+        "//vendor/github.com/gogo/protobuf/proto:go_default_library",
+        "//vendor/github.com/gogo/protobuf/sortkeys:go_default_library",
+        "//vendor/k8s.io/api/core/v1:go_default_library",
         "//vendor/k8s.io/apimachinery/pkg/api/resource:go_default_library",
         "//vendor/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",
         "//vendor/k8s.io/apimachinery/pkg/conversion:go_default_library",
         "//vendor/k8s.io/apimachinery/pkg/runtime:go_default_library",
         "//vendor/k8s.io/apimachinery/pkg/runtime/schema:go_default_library",
-        "//vendor/k8s.io/apimachinery/pkg/types:go_default_library",
+        "//vendor/k8s.io/metrics/pkg/apis/metrics:go_default_library",
     ],
 )
 
@@ -32,10 +37,12 @@ filegroup(
 
 filegroup(
     name = "all-srcs",
-    srcs = [
-        ":package-srcs",
-        "//staging/src/k8s.io/metrics/pkg/apis/custom_metrics/install:all-srcs",
-        "//staging/src/k8s.io/metrics/pkg/apis/custom_metrics/v1beta1:all-srcs",
-    ],
+    srcs = [":package-srcs"],
     tags = ["automanaged"],
+)
+
+filegroup(
+    name = "go_default_library_protos",
+    srcs = ["generated.proto"],
+    visibility = ["//visibility:public"],
 )
