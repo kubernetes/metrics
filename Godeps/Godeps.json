@@ -239,7 +239,7 @@
       "Rev": "0b011bb8613011ab0909c6a759d9d811dc21a156"
     },
     {
-      "ImportPath": "k8s.io/api/autoscaling/v2alpha1",
+      "ImportPath": "k8s.io/api/autoscaling/v2beta1",
       "Rev": "0b011bb8613011ab0909c6a759d9d811dc21a156"
     },
     {
