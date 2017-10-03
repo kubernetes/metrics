@@ -6,7 +6,7 @@
   gathers metrics, writes them to metrics storage "sinks", and exposes the
   resource metrics API from in-memory storage.
 
-- [Metrics Server](https://github.com/kubernetes/heapster):
+- [Metrics Server](https://github.com/kubernetes-incubator/metrics-server):
   a lighter-weight in-memory server specifically for the resource metrics
   API.
 
