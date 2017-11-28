@@ -13,7 +13,7 @@
 ## Custom Metrics API
 
 ***NB: None of the below implemenations are officially part of Kubernetes.
-They are listed here for convinience.***
+They are listed here for convenience.***
 
 - [Prometheus
   Adapter](https://github.com/directxman12/k8s-prometheus-adapter).  An
