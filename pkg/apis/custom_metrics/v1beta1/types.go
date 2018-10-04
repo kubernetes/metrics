@@ -17,7 +17,6 @@ limitations under the License.
 package v1beta1
 
 import (
-	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -67,7 +66,7 @@ type MetricValue struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
-// MetricListOptions is used to select metrics by their label selectors
+// MetricListOptions is used to select metrics by their field and label selectors
 type MetricListOptions struct {
 	metav1.TypeMeta `json:",inline"`
 
@@ -79,8 +78,13 @@ type MetricListOptions struct {
 	// A selector to restrict the list of returned metrics by their labels
 	// +optional
 	MetricLabelSelector string `json:"metricLabelSelector,omitempty" protobuf:"bytes,2,opt,name=metricLabelSelector"`
+
+	// A selector to restrict the list of returned objects by their fields.
+	// Defaults to everything.
+	// +optional
+	FieldSelector string `json:"fieldSelector,omitempty" protobuf:"bytes,3,opt,name=fieldSelector"`
 }
 
 // allObjects is a wildcard used to select metrics
-// for all objects matching the given label selector
+// for all objects matching the given field and label selectors
 const AllObjects = "*"

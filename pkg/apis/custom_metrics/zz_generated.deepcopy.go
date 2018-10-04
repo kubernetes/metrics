@@ -30,8 +30,12 @@ func (in *MetricIdentifier) DeepCopyInto(out *MetricIdentifier) {
 	*out = *in
 	if in.Selector != nil {
 		in, out := &in.Selector, &out.Selector
-		*out = new(v1.LabelSelector)
-		(*in).DeepCopyInto(*out)
+		if *in == nil {
+			*out = nil
+		} else {
+			*out = new(v1.LabelSelector)
+			(*in).DeepCopyInto(*out)
+		}
 	}
 	return
 }
@@ -80,8 +84,12 @@ func (in *MetricValue) DeepCopyInto(out *MetricValue) {
 	in.Timestamp.DeepCopyInto(&out.Timestamp)
 	if in.WindowSeconds != nil {
 		in, out := &in.WindowSeconds, &out.WindowSeconds
-		*out = new(int64)
-		**out = **in
+		if *in == nil {
+			*out = nil
+		} else {
+			*out = new(int64)
+			**out = **in
+		}
 	}
 	out.Value = in.Value.DeepCopy()
 	return
