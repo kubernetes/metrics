@@ -9,8 +9,8 @@ require (
 	github.com/stretchr/testify v1.3.0
 	k8s.io/api v0.0.0-20191025225708-5524a3672fbb
 	k8s.io/apimachinery v0.0.0-20191025225532-af6325b3a843
-	k8s.io/client-go v0.0.0-20191025225928-af0e48646694
-	k8s.io/code-generator v0.0.0-20191025225349-fb66f1f7eb3c
+	k8s.io/client-go v0.0.0-20191026065934-0bdba2f91880
+	k8s.io/code-generator v0.0.0-20191026065352-f361089c127c
 )
 
 replace (
@@ -24,6 +24,6 @@ replace (
 	golang.org/x/time => golang.org/x/time v0.0.0-20161028155119-f51c12702a4d
 	k8s.io/api => k8s.io/api v0.0.0-20191025225708-5524a3672fbb
 	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20191025225532-af6325b3a843
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20191025225928-af0e48646694
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20191025225349-fb66f1f7eb3c
+	k8s.io/client-go => k8s.io/client-go v0.0.0-20191026065934-0bdba2f91880
+	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20191026065352-f361089c127c
 )
