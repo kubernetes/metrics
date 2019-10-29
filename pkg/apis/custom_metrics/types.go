@@ -34,7 +34,7 @@ type MetricIdentifier struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
-// a list of values for a given metric for some set of objects
+// MetricValueList returns a list of values for a given metric for some set of objects
 type MetricValueList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
@@ -45,7 +45,7 @@ type MetricValueList struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
-// a metric value for some object
+// MetricValue returns a metric value for some object
 type MetricValue struct {
 	metav1.TypeMeta `json:",inline"`
 
@@ -67,7 +67,7 @@ type MetricValue struct {
 	Value resource.Quantity `json:"value"`
 }
 
-// allObjects is a wildcard used to select metrics
+// AllObjects is a wildcard used to select metrics
 // for all objects matching the given label selector
 const AllObjects = "*"
 

@@ -22,7 +22,7 @@ import (
 	"k8s.io/metrics/pkg/apis/custom_metrics"
 )
 
-func Convert_v1beta1_MetricValue_To_custom_metrics_MetricValue(in *MetricValue, out *custom_metrics.MetricValue, s conversion.Scope) error {
+func ConvertV1beta1MetricValueToCustomMetricsMetricValue(in *MetricValue, out *custom_metrics.MetricValue, s conversion.Scope) error {
 	out.TypeMeta = in.TypeMeta
 	out.DescribedObject = custom_metrics.ObjectReference{
 		Kind:            in.DescribedObject.Kind,
@@ -41,7 +41,7 @@ func Convert_v1beta1_MetricValue_To_custom_metrics_MetricValue(in *MetricValue, 
 	return nil
 }
 
-func Convert_custom_metrics_MetricValue_To_v1beta1_MetricValue(in *custom_metrics.MetricValue, out *MetricValue, s conversion.Scope) error {
+func ConvertCustomMetricsMetricValueToV1beta1MetricValue(in *custom_metrics.MetricValue, out *MetricValue, s conversion.Scope) error {
 	out.TypeMeta = in.TypeMeta
 	out.DescribedObject = v1.ObjectReference{
 		Kind:            in.DescribedObject.Kind,

@@ -56,12 +56,12 @@ func RegisterConversions(s *runtime.Scheme) error {
 		return err
 	}
 	if err := s.AddConversionFunc((*custommetrics.MetricValue)(nil), (*MetricValue)(nil), func(a, b interface{}, scope conversion.Scope) error {
-		return Convert_custom_metrics_MetricValue_To_v1beta1_MetricValue(a.(*custommetrics.MetricValue), b.(*MetricValue), scope)
+		return ConvertCustomMetricsMetricValueToV1beta1MetricValue(a.(*custommetrics.MetricValue), b.(*MetricValue), scope)
 	}); err != nil {
 		return err
 	}
 	if err := s.AddConversionFunc((*MetricValue)(nil), (*custommetrics.MetricValue)(nil), func(a, b interface{}, scope conversion.Scope) error {
-		return Convert_v1beta1_MetricValue_To_custom_metrics_MetricValue(a.(*MetricValue), b.(*custommetrics.MetricValue), scope)
+		return ConvertV1beta1MetricValueToCustomMetricsMetricValue(a.(*MetricValue), b.(*custommetrics.MetricValue), scope)
 	}); err != nil {
 		return err
 	}
@@ -121,7 +121,7 @@ func autoConvert_v1beta1_MetricValueList_To_custom_metrics_MetricValueList(in *M
 		in, out := &in.Items, &out.Items
 		*out = make([]custommetrics.MetricValue, len(*in))
 		for i := range *in {
-			if err := Convert_v1beta1_MetricValue_To_custom_metrics_MetricValue(&(*in)[i], &(*out)[i], s); err != nil {
+			if err := ConvertV1beta1MetricValueToCustomMetricsMetricValue(&(*in)[i], &(*out)[i], s); err != nil {
 				return err
 			}
 		}
@@ -142,7 +142,7 @@ func autoConvert_custom_metrics_MetricValueList_To_v1beta1_MetricValueList(in *c
 		in, out := &in.Items, &out.Items
 		*out = make([]MetricValue, len(*in))
 		for i := range *in {
-			if err := Convert_custom_metrics_MetricValue_To_v1beta1_MetricValue(&(*in)[i], &(*out)[i], s); err != nil {
+			if err := ConvertCustomMetricsMetricValueToV1beta1MetricValue(&(*in)[i], &(*out)[i], s); err != nil {
 				return err
 			}
 		}
