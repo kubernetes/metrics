@@ -9,8 +9,8 @@ require (
 	github.com/stretchr/testify v1.4.0
 	k8s.io/api v0.0.0-20200124032216-924612ff3bca
 	k8s.io/apimachinery v0.0.0-20200124032037-954b62493c18
-	k8s.io/client-go v0.0.0-20200124032437-bccad466ab89
-	k8s.io/code-generator v0.0.0-20200124031900-12ea3543a7d6
+	k8s.io/client-go v0.0.0-20200124112438-142dce433b42
+	k8s.io/code-generator v0.0.0-20200124111904-efe2535de926
 )
 
 replace (
@@ -18,6 +18,6 @@ replace (
 	golang.org/x/tools => golang.org/x/tools v0.0.0-20190821162956-65e3620a7ae7 // pinned to release-branch.go1.13
 	k8s.io/api => k8s.io/api v0.0.0-20200124032216-924612ff3bca
 	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20200124032037-954b62493c18
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20200124032437-bccad466ab89
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20200124031900-12ea3543a7d6
+	k8s.io/client-go => k8s.io/client-go v0.0.0-20200124112438-142dce433b42
+	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20200124111904-efe2535de926
 )
