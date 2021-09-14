@@ -4,13 +4,12 @@ Kubernetes metrics API type definitions and clients.
 
 ## Purpose
 
-This repository contains type definitions and client code for the metrics
-APIs that Kubernetes makes use of.  Depending on the API, the actual
-implementations live elsewhere.
+This repository contains type definitions for the metrics APIs 
+that Kubernetes makes use of.
 
-Consumers of the metrics APIs can make use of this repository to access
-implementations of the APIs, while implementors should make use of this
-library when implementing their API servers.
+API implementors make use of this library when implementing 
+their API servers, while consumers of the metrics APIs can make use 
+of this repository to access implementations of the APIs.
 
 ## APIs
 
