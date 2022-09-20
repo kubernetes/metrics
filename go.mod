@@ -7,10 +7,10 @@ go 1.19
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.0
-	k8s.io/api v0.0.0-20220920024110-052d63f042d1
-	k8s.io/apimachinery v0.0.0-20220920023906-f8159af4957e
-	k8s.io/client-go v0.0.0-20220920024403-f7c9c639d451
-	k8s.io/code-generator v0.0.0-20220920023722-4ca0baf2d316
+	k8s.io/api v0.26.0-alpha.1
+	k8s.io/apimachinery v0.26.0-alpha.1
+	k8s.io/client-go v0.26.0-alpha.1
+	k8s.io/code-generator v0.26.0-alpha.1
 )
 
 require (
@@ -59,8 +59,8 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20220920024110-052d63f042d1
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20220920023906-f8159af4957e
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20220920024403-f7c9c639d451
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20220920023722-4ca0baf2d316
+	k8s.io/api => k8s.io/api v0.26.0-alpha.1
+	k8s.io/apimachinery => k8s.io/apimachinery v0.26.0-alpha.1
+	k8s.io/client-go => k8s.io/client-go v0.26.0-alpha.1
+	k8s.io/code-generator => k8s.io/code-generator v0.26.0-alpha.1
 )
