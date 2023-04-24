@@ -7,10 +7,10 @@ go 1.20
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.2
-	k8s.io/api v0.0.0-20230424214209-9dec43fa7a26
-	k8s.io/apimachinery v0.0.0-20230424213653-150a158d04ab
-	k8s.io/client-go v0.0.0-20230424215815-e846cbee0dd6
-	k8s.io/code-generator v0.0.0-20230424213333-d0b82bbfefe8
+	k8s.io/api v0.0.0-20230424214213-e93fc0e43e75
+	k8s.io/apimachinery v0.0.0-20230424213653-0db4b4996746
+	k8s.io/client-go v0.0.0-20230424215824-d2b87849d5e7
+	k8s.io/code-generator v0.0.0-20230424213334-9423c3dbc45c
 )
 
 require (
@@ -24,7 +24,7 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/gnostic v0.5.7-v3refs // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
-	github.com/google/gofuzz v1.1.0 // indirect
+	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
@@ -58,8 +58,8 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20230424214209-9dec43fa7a26
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20230424213653-150a158d04ab
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20230424215815-e846cbee0dd6
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20230424213333-d0b82bbfefe8
+	k8s.io/api => k8s.io/api v0.0.0-20230424214213-e93fc0e43e75
+	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20230424213653-0db4b4996746
+	k8s.io/client-go => k8s.io/client-go v0.0.0-20230424215824-d2b87849d5e7
+	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20230424213334-9423c3dbc45c
 )
