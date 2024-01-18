@@ -7,10 +7,10 @@ go 1.21
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.4
-	k8s.io/api v0.0.0-20240118211852-add4d306444d
-	k8s.io/apimachinery v0.0.0-20240118211637-942edc444171
-	k8s.io/client-go v0.0.0-20240118212157-7e651e598d76
-	k8s.io/code-generator v0.0.0-20240118211431-aed827f10d73
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 )
 
 require (
@@ -49,7 +49,7 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/gengo v0.0.0-20230829151522-9cce18d56c01 // indirect
-	k8s.io/klog/v2 v2.120.0 // indirect
+	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20231113174909-778a5567bc1e // indirect
 	k8s.io/utils v0.0.0-20230726121419-3b25d923346b // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
@@ -58,8 +58,9 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20240118211852-add4d306444d
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20240118211637-942edc444171
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20240118212157-7e651e598d76
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20240118211431-aed827f10d73
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
+	k8s.io/metrics => ../metrics
 )
