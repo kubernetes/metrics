@@ -7,10 +7,10 @@ go 1.22.0
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.4
-	k8s.io/api v0.0.0-20240418013359-a819b1d9bd16
-	k8s.io/apimachinery v0.0.0-20240418013206-77786464c20d
-	k8s.io/client-go v0.0.0-20240404035629-aa7909e7d7c0
-	k8s.io/code-generator v0.0.0-20240418013756-585ff305a772
+	k8s.io/api v0.0.0-20240418133400-98d0c7a1b77e
+	k8s.io/apimachinery v0.0.0-20240418133208-0ee3e6150890
+	k8s.io/client-go v0.0.0-20240418173639-b1c1c0345d1d
+	k8s.io/code-generator v0.0.0-20240418174133-2a5cd15965ea
 )
 
 require (
