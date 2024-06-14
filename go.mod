@@ -8,9 +8,10 @@ require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.4
 	k8s.io/api v0.0.0-20240611003639-590e50434bf1
-	k8s.io/apimachinery v0.0.0-20240611003333-1a6a62ad18e9
-	k8s.io/client-go v0.0.0-20240611004119-911684686f22
-	k8s.io/code-generator v0.0.0-20240611005046-3a49e5b429ad
+	k8s.io/apimachinery v0.0.0-20240613101152-30b7bf11450a
+	k8s.io/client-go v0.0.0-20240614141049-cea15394b3c4
+	k8s.io/code-generator v0.0.0-20240614141547-0b3f2eff9682
+	k8s.io/klog/v2 v2.120.1
 )
 
 require (
@@ -51,7 +52,6 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/gengo/v2 v2.0.0-20240228010128-51d4e06bde70 // indirect
-	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340 // indirect
 	k8s.io/utils v0.0.0-20230726121419-3b25d923346b // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
