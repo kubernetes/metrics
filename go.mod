@@ -13,10 +13,10 @@ godebug winsymlink=0
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.9.0
-	k8s.io/api v0.0.0
-	k8s.io/apimachinery v0.0.0
-	k8s.io/client-go v0.0.0
-	k8s.io/code-generator v0.0.0
+	k8s.io/api v0.0.0-20241204221923-645453f0621f
+	k8s.io/apimachinery v0.0.0-20241204221643-a0ca8148bde6
+	k8s.io/client-go v0.0.0-20241204222315-f118320d13f9
+	k8s.io/code-generator v0.0.0-20241204223223-b9bb950f9c4d
 )
 
 require (
@@ -62,11 +62,4 @@ require (
 	sigs.k8s.io/json v0.0.0-20241010143419-9aa6b5e7a4b3 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.2 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
-)
-
-replace (
-	k8s.io/api => ../api
-	k8s.io/apimachinery => ../apimachinery
-	k8s.io/client-go => ../client-go
-	k8s.io/code-generator => ../code-generator
 )
