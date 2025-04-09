@@ -9,10 +9,10 @@ godebug default=go1.24
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.10.0
-	k8s.io/api v0.0.0-20250401102040-dc8867983a6e
-	k8s.io/apimachinery v0.0.0-20250401101805-7b4292bd2e85
-	k8s.io/client-go v0.0.0-20250401103247-18a1faa115ed
-	k8s.io/code-generator v0.0.0-20250401104849-2a635fa63960
+	k8s.io/api v0.34.0-alpha.0
+	k8s.io/apimachinery v0.34.0-alpha.0
+	k8s.io/client-go v0.34.0-alpha.0
+	k8s.io/code-generator v0.34.0-alpha.0
 )
 
 require (
