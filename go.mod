@@ -9,10 +9,10 @@ godebug default=go1.24
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.10.0
-	k8s.io/api v0.0.0-20250901203655-82f77ebdf665
-	k8s.io/apimachinery v0.0.0-20250901203349-2340d9bf7725
-	k8s.io/client-go v0.0.0-20250901204127-b0a827f5d54b
-	k8s.io/code-generator v0.0.0-20250901205219-932923739131
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 )
 
 require (
@@ -50,7 +50,7 @@ require (
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/gengo/v2 v2.0.0-20250604051438-85fd79dbfd9f // indirect
+	k8s.io/gengo/v2 v2.0.0-20250903151518-081d64401ab4 // indirect
 	k8s.io/klog/v2 v2.130.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20250710124328-f3f2b991d03b // indirect
 	k8s.io/utils v0.0.0-20250604170112-4c0f3b243397 // indirect
@@ -58,4 +58,11 @@ require (
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
+)
+
+replace (
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
 )
