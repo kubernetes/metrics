@@ -10,8 +10,8 @@ require (
 	github.com/stretchr/testify v1.11.1
 	k8s.io/api v0.0.0-20251204222945-bbcbaa8f8665
 	k8s.io/apimachinery v0.0.0-20251204222403-72d71eac265e
-	k8s.io/client-go v0.0.0-20251204213705-891f94c690cb
-	k8s.io/code-generator v0.0.0-20251204225556-840eca38f423
+	k8s.io/client-go v0.0.0-20260304191620-f80003c24087
+	k8s.io/code-generator v0.0.0-20260304191620-397b82df2302
 )
 
 require (
