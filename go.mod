@@ -8,10 +8,10 @@ godebug default=go1.26
 
 require (
 	github.com/stretchr/testify v1.11.1
-	k8s.io/api v0.0.0-20260509204538-0dfb117cc6ec
-	k8s.io/apimachinery v0.0.0-20260512194637-39aa74cfc752
-	k8s.io/client-go v0.0.0-20260512224453-11948c13361e
-	k8s.io/code-generator v0.0.0-20260512225433-a72704c8e7dc
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 )
 
 require (
@@ -60,10 +60,18 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/gengo/v2 v2.0.0-20250922181213-ec3ebc5fd46b // indirect
 	k8s.io/klog/v2 v2.140.0 // indirect
-	k8s.io/kube-openapi v0.0.0-20260509150519-312035bf509b // indirect
+	k8s.io/kube-openapi v0.0.0-20260511211612-da4e56fe5676 // indirect
 	k8s.io/utils v0.0.0-20260210185600-b8788abfbbc2 // indirect
 	sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730 // indirect
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.2 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
+)
+
+replace (
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
+	k8s.io/streaming => ../streaming
 )
