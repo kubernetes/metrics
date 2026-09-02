@@ -8,10 +8,10 @@ godebug default=go1.26
 
 require (
 	github.com/stretchr/testify v1.12.1
-	k8s.io/api v0.0.0-20260829005437-99eb51d61cdd
-	k8s.io/apimachinery v0.0.0-20260829005050-50d9b4a672b4
-	k8s.io/client-go v0.0.0-20260829005942-d4060b1a90a3
-	k8s.io/code-generator v0.0.0-20260829011000-611723b0a83e
+	k8s.io/api v0.0.0-20260901213013-4df8f8b287da
+	k8s.io/apimachinery v0.0.0-20260902054759-19da3e68aab0
+	k8s.io/client-go v0.0.0-20260902055804-12ffdc22a663
+	k8s.io/code-generator v0.0.0-20260902060934-d8f694daed78
 )
 
 require (
